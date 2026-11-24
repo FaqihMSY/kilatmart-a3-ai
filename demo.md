@@ -53,7 +53,7 @@ Rekam layar terminal, tanpa suara internet. Urutan sama dengan demo: `up`, log f
 | Hal | Status |
 |---|---|
 | Isi nama kelompok di sampul slide 1 | belum, placeholder `[Nama kelompok dan anggota]` |
-| Isi link repo di slide 8 | belum, repo belum dibuat dan belum di-push |
+| Isi link repo di slide 8 | selesai, `github.com/FaqihMSY/kilatmart-a3-ai`. Repo private: tambahkan dosen dan tim sebagai collaborator |
 | Ekspor deck ke PDF | belum, brief meminta PDF. Lakukan setelah deck disetujui |
 | Video cadangan | belum direkam |
 | Uji clone bersih di laptop demo | belum |

@@ -361,7 +361,7 @@ pres.addSection({ title: "Penutup" });
   s.addNotes("Untuk mengulang, cukup clone repo, jalankan docker compose up dengan build, lalu baca log pipeline. Versi image dipin, jadi hasilnya sama di laptop lain. Kami sudah mencoba dari clone bersih dan hasilnya sama: lima order, tiga shipments, tiga baris sales_per_day. Untuk AI, kami memakai Claude Code untuk konfigurasi dan debugging, dan semua keluarannya kami jalankan serta bisa kami jelaskan baris per baris.");
   const mono = (t, o = {}) => ({ text: t, options: { fontFace: MONO, fontSize: 16, ...o } });
   cardHead(s, 0.5, 2.0, 7.3, 3.0, "Menjalankan", [
-    { text: "1  ", options: { bold: true, color: BLUE, fontSize: 16 } }, mono("git clone <link repo>", { breakLine: true }),
+    { text: "1  ", options: { bold: true, color: BLUE, fontSize: 16 } }, mono("git clone https://github.com/FaqihMSY/kilatmart-a3-ai", { breakLine: true, fontSize: 14 }),
     { text: "2  ", options: { bold: true, color: BLUE, fontSize: 16 } }, mono("docker compose up -d --build", { breakLine: true }),
     { text: "3  ", options: { bold: true, color: BLUE, fontSize: 16 } }, mono("docker compose logs pipeline", { breakLine: true }),
     { text: "Image dipin: postgres:16, python:3.12-slim, dlt 1.32.0.", options: { fontSize: 14, color: GRAY } },
@@ -371,8 +371,8 @@ pres.addSection({ title: "Penutup" });
     { text: "Claude Code (Anthropic) dipakai untuk konfigurasi compose, pipeline dlt, mock, seed, dan debugging. Semua keluarannya dijalankan dan bisa dijelaskan baris per baris.", options: { fontSize: 15 } }]);
   s.addText([
     { text: "Repo: ", options: { bold: true } },
-    { text: "[isi link repo]", options: { fontFace: MONO } },
-    { text: "     Clone bersih: 5 orders, 3 shipments, 3 baris sales_per_day", options: {} }],
+    { text: "github.com/FaqihMSY/kilatmart-a3-ai", options: { fontFace: MONO, breakLine: true } },
+    { text: "Clone bersih: 5 orders, 3 shipments, 3 baris sales_per_day", options: { fontSize: 15 } }],
     { x: 0.5, y: 5.3, w: 12.33, h: 1.2, align: "center", valign: "middle", margin: 14, isTextBox: true, shape: pres.ShapeType.roundRect, rectRadius: 0.08,
       fill: { color: BLUE }, fontFace: F, fontSize: 18, color: "FFFFFF" });
 }
