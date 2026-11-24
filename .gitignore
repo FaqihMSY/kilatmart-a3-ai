@@ -1,0 +1,5 @@
+data/
+__pycache__/
+.dlt/secrets.toml
+~$*
+pesan-ke-tim.md

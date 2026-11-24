@@ -1,0 +1,6 @@
+Pipeline kilatmart load step finished in 0.39 seconds
+1 load package(s) were loaded to destination duckdb and into dataset raw
+The duckdb destination used duckdb:////data/analytics.duckdb location to store data
+Load package 1795503998.3059213 is LOADED and contains no failed jobs
+ROWS_THIS_RUN {'orders': 5, 'shipments': 3}
+TOTAL_ROWS {'orders': 5, 'shipments': 3, 'sales_per_day': 3}

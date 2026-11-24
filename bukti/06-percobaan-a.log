@@ -1,0 +1,13 @@
+=== kolom raw.orders sebelum
+['id', 'customer', 'item', 'qty', 'price', 'status', 'created_at', 'updated_at', '_dlt_load_id', '_dlt_id']
+=== TAHAP 1: ALTER TABLE saja
+ALTER TABLE
+ROWS_THIS_RUN {'shipments': 3}
+TOTAL_ROWS {'orders': 6, 'shipments': 3, 'sales_per_day': 4}
+['id', 'customer', 'item', 'qty', 'price', 'status', 'created_at', 'updated_at', '_dlt_load_id', '_dlt_id']
+=== TAHAP 2: insert order dengan promo_code
+INSERT 0 1
+ROWS_THIS_RUN {'shipments': 3, 'orders': 1}
+TOTAL_ROWS {'orders': 7, 'shipments': 3, 'sales_per_day': 4}
+['id', 'customer', 'item', 'qty', 'price', 'status', 'created_at', 'updated_at', '_dlt_load_id', '_dlt_id', 'promo_code']
+[(1, 'Andi', None), (2, 'Sari', None), (3, 'Budi', None), (4, 'Dewi', None), (5, 'Rina', None), (6, 'Budi', None), (7, 'Citra', 'HEMAT10')]

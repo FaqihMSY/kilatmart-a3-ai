@@ -1,0 +1,42 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: kilatmart
+      POSTGRES_PASSWORD: kilatmart
+      POSTGRES_DB: kilatmart
+    volumes:
+      - ./seed:/docker-entrypoint-initdb.d:ro
+    ports:
+      - "5433:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kilatmart -d kilatmart"]
+      interval: 3s
+      retries: 20
+
+  mock-kirimecepat:
+    build: ./mock-kirimecepat
+    environment:
+      KIRIMCEPAT_API_KEY: kirimcepat-dev-key
+    ports:
+      - "8001:8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 3s
+      retries: 20
+
+  pipeline:
+    build: ./pipeline
+    restart: "no"
+    depends_on:
+      db:
+        condition: service_healthy
+      mock-kirimecepat:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql+psycopg2://kilatmart:kilatmart@db:5432/kilatmart
+      KIRIMCEPAT_URL: http://mock-kirimecepat:8000
+      KIRIMCEPAT_API_KEY: kirimcepat-dev-key
+      DUCKDB_PATH: /data/analytics.duckdb
+    volumes:
+      - ./data:/data

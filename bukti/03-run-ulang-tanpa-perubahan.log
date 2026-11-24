@@ -1,0 +1,2 @@
+ROWS_THIS_RUN {'shipments': 3}
+TOTAL_ROWS {'orders': 5, 'shipments': 3, 'sales_per_day': 3}
